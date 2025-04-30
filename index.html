@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Poonam's first website for CTD">
-    <meta name="keywords" content="landing page of Poonam's Prortfolio">
+    <meta name="keywords" content="landing page of Poonam's Portfolio">
     
     <link href="css/index.css" rel="stylesheet">
    
@@ -24,9 +24,20 @@
         font-family: "Roboto", sans-serif;
        
     }   
+    
  </style>
  <body>
-    <img src="images/light.jpg" alt="icon" width="10" height="40" >
+    <a href ="https://www.google.com/"target="_blank" ><img class="lotus-img" src="images/light.jpg" alt="icon" width="10" height="40" >
+    
+    <nav id="nav">
+
+        <a href="#about"><button>About</button></a>
+        <a href="#experience"><button>Experience</button></a>
+        <a href="#skills"><button>Skills</button></a>
+        <a href="#projects"><button>Projects</button></a>
+        <a href="#connect"><button>Connect</button></a>
+    </nav>
+
     
     <h1>Poonam Shrestha</h1>
         
@@ -36,17 +47,17 @@
            <input type="button" onclick="toggleMarquee();" value="Toggle" />
            <h1 id="name">Shrestha Poonam</h1><i class="fa-sharp fa-regular fa-web-awesome"></i> -->
  
-    <section id="About">
+    <section id="about">
     <h2>About</h2>
     
     <p>Innovative and detail-oriented Fresher Front-End Software developer with a wide range of experiences.Specializing in creating responsive and user  friendly apps and websites.Skilled in collaborating with all the level of developers utilizing version control systems like VS Code on MacOS,Windows and linux, and staying up-to-date on emerging technologies.Proven track record in improving website traffic,performance and functionality through the implementation of front-end coding standards and troubleshotting.Enthusiastic about exploring cloud-native and AI technologies.Driven to develop efficient and scalable backend systems with proficiency in various modern technologies and practices.
         <!--Specializing in creating responsive designs involves focusing on developing flexible website layouts that adapt seamlessly to different screen sizes and devices. This involves using techniques like flexible grids, responsive images, and media queries to ensure a consistent and optimal user experience across various platforms, from desktops to smartphone-->
     </p>
     
-    <img src="images/BlackWhite.jpg" alt="smile" width="200" id="profile-picture"class="center">
+    <img class="poonam-img" src="images/BlackWhite.jpg" alt="smile" width="200" id="profile-picture"class="center">
     </section>
     
-    <section id="Experience">
+    <section id="experience">
     <h2>Experience</h2>
    
     <ul class="exp">
@@ -63,11 +74,41 @@
         </li>
     </ul>
     </section>
+    <section id="skills">
+        <h2>Skills</h2>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div>
+            <ul>
+
+            </ul>
+        </div>
+    </section>
+
 <section id="connect">
     <h2>Let's Connect</h2>
-    <ul class="socials"><li><a href="https://www.linkedin.com/in/poonamshrestha/">LinkedIn</a>
-        <img src="images/in.png" alt="LinkedInicon" width="50" id="profile-picture"class="center">
-    </li>
+    <ul class="socials">
+        <li><a href="https://www.linkedin.com/in/poonamshrestha/"target="_blank"><img src="images/in.png" alt="LinkedInicon" width="50">LinkedIn </a>
+        </li>
+    
+        <li><a href="https://github.com/Punams15/"target="_blank"><img src="images/giticon.png" alt="GitIcon" width="50">GitHub</a>
+        </li>
+
+                          
+        <li><a href="https://instagram.com" target="_blank"> <img src="images/insta.jpeg" width=”50”  alt="Instagram">Instagram</a>
+        </li>
+        
+        <li><a href="https://youtube.com" target="_blank"> <img src="images/youtube.jpeg" width="50 " alt="YouTube">Youtube</a></li>
+
+
+
+
+    </ul>
+    </section>
+
+
     <!-- <li>
     <a href="https://www.instagram.com/alotuscharms/">Instagram</a>
     </li>
@@ -77,14 +118,7 @@
      <li>
     <a href="https://discordapp.com/users/1202767446897987635">Discord</a>
     </li>-->
-    <li>
     
-    <img src="images/giticon.png" alt="GitIcon" width="50" >
-    <a href="https://github.com/Punams15">GitHub</a>
-    </li>
-    </ul>
-    </section>
-
-     <footer></footer>
+    <footer></footer>
      </body>
      </html>

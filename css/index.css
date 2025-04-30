@@ -26,8 +26,9 @@ h1 {
 
 h2{
     text-align: center;
+    text-decoration: underline;
     font-weight: bold;
-    color:#22
+    color:aqua;
     font: size 33px;
     font-family:"Roboto", sans-serif;
 }
@@ -42,6 +43,9 @@ section {
 .exp li{
     background-color: #677881;
     margin-bottom: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding: 15px
     
 }
@@ -49,6 +53,9 @@ section {
 
 .socials li{
 margin: 50px;
+display: flex;
+flex-direction: column;
+justify-content: center;
 text-align:center
 }
 a {
@@ -71,4 +78,39 @@ section {
     border-color:yellow;
     border-style:solid;
 
+}
+nav {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgb(129, 104, 130);
+    /*border-radius: 10px;*/
+    button:hover{
+        background: aqua;
+    }
+}
+
+
+
+.poonam-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: 4px solid rgb(255, 0, 140);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.lotus-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid yellow;   
 }
