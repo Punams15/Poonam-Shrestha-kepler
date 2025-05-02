@@ -24,18 +24,16 @@
   <style></style>
   <body>
     <nav class="dropdown">
-      <div class="dropdownnav">
-        <a href="#about"><button>About</button></a>
-        <a href="#experience"><button>Experience</button></a>
-        <a href="#skills"><button>Skills</button></a>
-        <a href="#projects"><button>Projects</button></a>
-        <a href="#connect"><button>Connect</button></a>
+      <a href="#about"><button>About</button></a>
+      <a href="#experience"><button>Experience</button></a>
+      <a href="#skills"><button>Skills</button></a>
+      <a href="#projects"><button>Projects</button></a>
+      <a href="#connect"><button>Connect</button></a>
 
-        <label class="switch">
-          <input type="checkbox" id="darkModeToggle" />
-          <span class="slider round"></span>
-        </label>
-      </div>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider round"></span>
+      </label>
     </nav>
 
     <h1>Poonam Shrestha</h1>
@@ -77,29 +75,66 @@
     <section id="experience">
       <h2>Experience</h2>
 
-      <div class="container exp-container">
-        <div class="box exp-box">
-          <ul class="exp">
-            <li>JavaSript</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Adobe Photoshop</li>
-            <li>Adobe Illustrator</li>
-            <li>Adobe Indesign</li>
-            <li>Windows</li>
-            <li>Basic MacOS</li>
-            <li>Basic Linux</li>
-          </ul>
-        </div>
-      </div>
+      <ul class="exp">
+        <li>
+          <div class="exp-header">
+            <h4>Cybersecurity engineer</h4>
+            <h5>(2023-2024)</h5>
+            <p>
+              Learned and applied Cybersecurity softwares &
+              tools:Linux,maltego,Nmap,Wireshark,metasploit,
+              Nikto,Clonezilla.Practiced hands-on experience in mobile devices,
+              networking, hardware, troubleshooting, virtualization, and cloud
+              computing.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div class="exp-header">
+            <h4>QA engineer</h4>
+            <h5>(2024-2025)</h5>
+            <p>
+              Hands-on expererience on SDET softwares & tools like Eclipse ,
+              Java, Selenium, Maven, TestNG.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <div class="exp-header">
+            <h4>Fresher Front-End Software engineer</h4>
+            <h5>(2025)</h5>
+            <p>
+              Application of fundamental languages include
+              Javascript,HTML,CSS.Hands-on experience on Version control systems
+              like VS Code and Git.Beyond coding, I also did mutiple project
+              designs using Adobe Photoshop,Illustrator and Indesign.
+            </p>
+          </div>
+        </li>
+
+        <!--<div class="container exp-container">
+            
+                   <div class="box  exp-box">
+                      <li>JavaSript</li>
+                      <li>HTML</li>
+                      <li>CSS</li>
+                      <li>Adobe Photoshop</li>
+                      <li>Adobe Illustrator</li>
+                      <li>Adobe Indesign</li>
+                      <li>Windows</li>
+                      <li>Basic MacOS</li>
+                      <li>Basic Linux</li>-->
+      </ul>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
 
-      <li>Fundamental languages include Javascript,HTML,CSS.</li>
+      <!--<li>Fundamental languages include Javascript,HTML,CSS.</li>
       <li>
-        UI (User Interface)Frameworks learning React.<!--,Angular, and Vue.js.-->
+        UI (User Interface)Frameworks learning React,Angular, and Vue.js.-->
       </li>
       <li>
         Testing and debugging tools:Familiarity with latest tools for
@@ -270,7 +305,7 @@
         Be like a lotus: Trust in the Light, grow through the dirt, believe in
         new beginnings !
       </h4>
-      <script src="app.js"></script>
+
       <script>
         const toggle = document.getElementById("darkModeToggle");
 
