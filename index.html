@@ -16,6 +16,8 @@
       rel="stylesheet"
     />
     <!-- FONT AWESOME -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <script
       src="https://kit.fontawesome.com/758ed9b136.js"
       crossorigin="anonymous"
@@ -34,6 +36,7 @@
   <style></style>
   <body>
     <nav id="Nav">
+      <!--<div class="nav-container">-->
       <ul>
         <li>
           <a href="#about"><button>About</button></a>
@@ -50,12 +53,19 @@
         <li>
           <a href="#connect"><button>Connect</button></a>
         </li>
+        <li>
+           <a href="#message-form"><img class="msg-img"
+              src="images/msg.png"
+              width="50px"
+              alt="Leave a Message"/></a>
+        </li>
 
         <label class="switch">
           <input type="checkbox" id="darkModeToggle" />
           <span class="slider round"></span>
         </label>
       </ul>
+      </div>
     </nav>
 
     <h1>Poonam Shrestha</h1>
@@ -70,21 +80,9 @@
         VS Code on MacOS, Windows and linux, and staying up-to-date on emerging
         technologies. Proven track record in improving website
         traffic,performance and functionality through the implementation of
-        front-end coding standards and troubleshootings. Enthusiastic about
-        exploring cloud-native and AI technologies.Driven to develop efficient
-        and scalable backend systems with proficiency in various modern
-        technologies and practices.Specialization in creating responsive designs
-        involves focusing on developing flexible website layouts that adapt
-        seamlessly to different screen sizes and devices. This involves using
-        techniques like flexible grids, responsive images, and media queries to
-        ensure a consistent and optimal user experience across various
-        platforms, from desktops to smartphones. I am excited to collaborate and
-        bring creative ideas to life through technology by focusing on the
-        user-facing part of a software application,including the visual elements
-        and interactions a user sees and uses.
-      </p>
-
-      <img
+        front-end coding standards and troubleshootings.
+        </p>
+       <img
         class="poonam-img"
         src="images/BlackWhite.jpg"
         alt="smile"
@@ -92,6 +90,25 @@
         id="profile-picture"
         class="center"
       />
+      <p>
+        Enthusiastic about exploring cloud-native and AI technologies.Driven to
+        develop efficient and scalable backend systems with proficiency in
+        various modern technologies and practices.Specialization in creating
+        responsive designs involves focusing on developing flexible website
+        layouts that adapt seamlessly to different screen sizes and devices.
+        This involves using techniques like flexible grids, responsive images,
+        and media queries to ensure a consistent and optimal user experience
+        across various platforms, from desktops to smartphones.
+      </p>
+
+      <p>
+        I am excited to collaborate and bring creative ideas to life through
+        technology by focusing on the user-facing part of a software
+        application,including the visual elements and interactions a user sees
+        and uses.
+      </p>
+
+      
     </section>
 
     <section id="experience">
@@ -160,7 +177,9 @@
     </section>
     <section id="skills">
       <h2>Skills</h2>
-      <ul></ul>
+      <ul>
+        <!-- list of skills dynamically inserted with JavaScript-->
+      </ul>
     </section>
     <section id="connect">
       <h2>Let's Connect</h2>
@@ -203,11 +222,23 @@
           <a href="https://instagram.com/alotuscharms/" target="_blank">
             <img
               class="connecti-img"
-              src="images/insta.jpeg"
+              src="images/InstaLED.png"
               width="70px"
               alt="Instagram"
             /><!--Instagram-->
           </a>
+        </div>
+        <div class="box social-box">
+          <a
+            href="https://discordapp.com/users/1202767446897987635"
+            target="_blank"
+            ><img
+              class="connectd-img"
+              src="images/dicordIcon.png"
+              width="70px"
+              alt="Discord"
+            /><!--Discord--></a
+          >
         </div>
       </div>
     </section>
@@ -284,9 +315,34 @@
         border-radius: 50%;
       }
     </style>
-    <footer>
-      <a href="#" target="_blank"
-        ><img
+    <section id="message-form">
+      <h2>Leave a Message</h2>
+      <form class="leave_message" name="leave_message">
+        <label for="usersName">Name</label><br>
+    <input id="usersName" class="input" type="text" name="usersName" placeholder="Full Name.." required><br>
+
+    <label for="usersEmail">Email</label><br>
+    <input id="usersEmail" class="input" type="email" name="usersEmail" placeholder="name@email.com" required><br>
+
+     <label for="usersPhoneNumber"><i class="fa fa-phone"></i> Phone Number</label><br>
+    <input id="usersPhoneNumber" class="input" type="phonenumber" name="usersPhoneNumber" placeholder="Phone Number (Optional)"></i><br>
+
+    <label for="usersMessage">Message</label><br>
+    <textarea id="usersMessage" class="input" name="usersMessage" placeholder=" Message.." required></textarea><br>
+
+    <button class="submit-btn" type="submit">Submit</button>
+   
+     </form>
+    <section id="messages" class="hidden">
+    <h2>Messages</h2>
+    <ul>
+      <!-- received messages on this section dynamically inserted with JavaScript -->
+    </ul>
+    </section>
+     </section>
+    <footer> 
+     
+      <a href="#about"><img
           class="lotus-img"
           src="images/light.jpg"
           alt="icon"
@@ -305,7 +361,9 @@
           document.body.classList.toggle("dark-mode");
         });
       </script>
-    </footer>
+       <!-- footer dynamically inserted with JavaScript and appended to the body-->
+   
     <script src="js/index.js"></script>
+    </footer>
   </body>
 </html>

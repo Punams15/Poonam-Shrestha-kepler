@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* offset if fixed navbar hides the section */
+}
+
 body {
   background-color: #333;
   color: #c47d7d;
@@ -49,6 +54,11 @@ h1 {
 #projects,
 #connect {
   background-color: rgba(0, 0, 0, 0.3);
+  margin: 4rem;
+  padding: 3rem;
+  border-color: yellow;
+  /*border-color: rgb(162, 0, 255);*/
+  border-style: solid;
 }
 
 .neon-img:hover {
@@ -85,12 +95,18 @@ h6 {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-section {
+#about,
+#projects,
+#connect {
+  border-color: orange;
+}
+
+/*section {
   margin: 4rem;
   padding: 3rem;
   border-color: yellow;
   border-style: solid;
-}
+}*/
 
 .connect-container {
   width: 90%;
@@ -99,9 +115,10 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: #4d4979;
 }
 
-.social-box {
+/*.social-box {
   width: 10rem;
   margin: 1rem;
   transition: 1s;
@@ -109,12 +126,12 @@ section {
   border-color: #48457e;
   border-style: solid;
   justify-content: center;
-}
+}*/
 
-.social-box:hover {
+/*.social-box:hover {
   transform: scale(1.3);
   z-index: 2;
-}
+}*/
 
 #Nav {
   background-color: rgb(139, 103, 141);
@@ -132,6 +149,7 @@ section {
   gap: 1rem;
   /*background: linear-gradient(to right, teal, pink);*/
 }
+
 #Nav button {
   width: 6.5rem;
   height: 1.5rem;
@@ -155,7 +173,7 @@ section {
   border-radius: 1rem;
   border: 0.2rem solid rgb(255, 0, 140);
   margin-top: 1rem;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 .poonam-img:hover {
   transform: scale(1.3);
@@ -177,29 +195,15 @@ section {
   border-radius: 0.6rem;
   display: flex;
   cursor: pointer;
-  transform: translateY(-3px);
 }
 
-.connectg-img {
+.connectg-img,
+.connecty-img,
+.connecti-img,
+.connectd-img {
   display: flex;
-  margin-left: 3.2rem;
-  border-radius: 1rem;
-  justify-content: center;
-  text-align: center;
-}
-
-.connecty-img {
-  display: flex;
-  margin-left: 3.1rem;
-  border-radius: 1rem;
-  justify-content: center;
-  text-align: center;
-}
-
-.connecti-img {
-  display: flex;
-  margin-left: 3.1rem;
-  padding-top: 0.022rem;
+  margin-left: 3.3rem;
+  padding-top: 0.1rem;
   border-radius: 1rem;
   justify-content: center;
   text-align: center;
@@ -266,6 +270,189 @@ footer {
   color: rgb(255, 0, 251);
 }
 
+/* Message form */
+.msg-img {
+  display: block;
+  border-radius: 2rem;
+  max-width: 100%;
+  height: auto;
+  /*vertical-align: middle;*/
+  border-color: rgb(162, 0, 255);
+  border-style: solid;
+}
+
+#message-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 4rem;
+  padding: 3rem;
+  border-color: yellow;
+  border-style: solid;
+  border-color: rgb(162, 0, 255);
+  border-style: solid;
+}
+
+.input {
+  width: 30%;
+  height: 10%;
+  padding: 12px 6px;
+  font-size: inherit;
+  font-family: inherit;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.phone-number {
+  font-size: medium;
+  color: #cd299c;
+}
+
+/*.phone-number::before {
+  content: "☏ ";
+  margin-right: 5px;
+}*/
+
+/*.phone-number::before {
+  content: "📞";
+  margin-right: 10px;
+}*/
+.submit-btn {
+  background-color: rgb(207, 112, 128);
+  width: 10%;
+  height: auto;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  border: #5d7bd5;
+}
+.submit-btn:hover {
+  background: #47f013;
+  cursor: pointer;
+  transform: translateY(-3px);
+}
+
+#messages {
+  margin-top: 3rem;
+  padding-bottom: 20rem;
+  display: none;
+}
+
+/* Messages from users */
+
+.hidden {
+  display: none;
+}
+.messages-ul {
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgb(192, 192, 192);
+  color: #6d3a15;
+  list-style: none;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.user-msg-li {
+  width: 98%;
+  border: 5px solid rgb(211, 153, 114);
+
+  margin-bottom: 20px;
+  padding: 3px 2px;
+}
+
+.user-email {
+  display: block;
+  color: #137af0;
+  margin-bottom: 10px;
+}
+
+.user-msg {
+  display: block;
+  word-wrap: break-word; /* word-wrap: break-word key to fixing the overflow */
+  margin-bottom: 15px;
+}
+
+.remove-btn {
+  background-color: rgb(168, 78, 161);
+  background-color: orange;
+  color: #a92606;
+  width: 6rem;
+  height: 2.2rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  border: orange;
+}
+
+.remove-btn:hover {
+  cursor: pointer;
+  background-color: rgb(73, 173, 173);
+}
+
+.edit-btn {
+  background-color: rgb(207, 112, 128);
+  color: #a92606;
+  width: 6rem;
+  height: 2.2rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  border: orange;
+}
+
+.edit-btn:hover {
+  cursor: pointer;
+  background-color: rgb(73, 173, 173);
+  opacity: 0.9;
+}
+
+.edit-btn,
+.remove-btn {
+  justify-items: center;
+  align-items: center;
+}
+
+.message-actions {
+  display: flex;
+  flex-direction: row; /* stack side by side */
+  justify-content: center; /* center horizontally */
+  gap: 10px; /* spacing between buttons */
+  margin-top: 10px;
+}
+
+.edit-input {
+  width: 80%;
+  padding: 5px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.edit-textarea {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.save-btn {
+  background-color: #137af0;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #c20f86;
+}
+
 /*h1,
   h4 {
     background: linear-gradient(to right, pink, teal);
@@ -284,15 +471,30 @@ footer {
 /* for mobile device 390 px and tablet/ipad device 768px */
 @media screen and (min-width: 390px) and (max-width: 768px) {
   #Nav ul {
-    display: grid;
-    grid-template-columns: 0;
+    /*display: grid;
+    grid-template-columns: 0;*/
     justify-content: left;
     align-items: center;
-    gap: 1.5rem;
     /*background: #09383e;*/
     background: linear-gradient(to right, teal, pink);
-    opacity: 1rem;
+    opacity: 1;
+    display: flex;
+    flex-direction: column; /* Change to column layout for better mobile visibility */
+    align-items: 0;
+    align-items: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
   }
+
+  /*.nav-container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;     /* Allows wrapping on small screens 
+} */
 
   h1 {
     font-size: 1.2rem;
@@ -318,7 +520,7 @@ footer {
     width: 100%;
   }
   .connect-container {
-    width: 0.5rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -329,43 +531,18 @@ footer {
     text-align: inherit;
   }
 
-  .connectl-img {
-    height: 2.5rem;
-    width: 2.5rem;
+  .connectg-img,
+  .connecty-img,
+  .connecti-img,
+  .connectd-img {
+    height: 3.5rem;
+    width: 3.5rem;
     display: flex;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 5rem;
     border-radius: 1rem;
   }
 
-  .connectg-img {
-    display: flex;
-    width: 25%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 1rem;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .connecty-img {
-    display: flex;
-    width: 25%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 1rem;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .connecti-img {
-    display: flex;
-    width: 25%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 1rem;
-    justify-content: center;
-  }
   .social-box {
     width: 10rem;
     margin: 0.1rem;
@@ -373,7 +550,12 @@ footer {
     align-items: center;
     border-color: #48457e;
     border-style: solid;
+    margin-left: 20%;
   }
+  #connect {
+    background-color: #4d4979;
+  }
+
   .exp {
     display: flex;
     flex-direction: column;
@@ -383,5 +565,38 @@ footer {
   }
   .exp-header {
     font-size: 0.4rem;
+  }
+
+  /* Message form */
+
+  .msg-img {
+    display: block;
+    height: auto;
+  }
+
+  .input {
+    font-size: small;
+    width: 90%;
+    height: 10%;
+  }
+
+  .submit-btn {
+    width: 50%;
+    height: auto;
+  }
+
+  /* Messages from users */
+
+  .user-msg-li {
+    width: 94%;
+    font-size: small;
+  }
+  .messages-ul {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 30%;
+  }
+  .phone-number {
+    font-size: small;
   }
 }
