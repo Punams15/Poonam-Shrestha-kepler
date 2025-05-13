@@ -1,4 +1,4 @@
-/* Desktop-first / (Desktops/Large Screens:	1024px – 1200px) */
+/* Desktop-first / (Desktops/Large Screens:	1024px – 1200px and 1280px) */
 
 * {
   margin: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #414948;
+  background-color: #333;
   color: #c47d7d;
   text-align: center;
   font: Verdana sans-serif;
@@ -32,7 +32,7 @@ h5,
 h6 {
   text-align: center;
   font-weight: bold;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Roboto Mono", monospace;
 }
 
 h1 {
@@ -40,12 +40,14 @@ h1 {
   /*color:#e751c1;*/
   font-size: 2rem;
   background-color: #95eca3;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #about,
 #experience,
 #skills,
-#projects {
+#projects,
+#connect {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -54,39 +56,33 @@ h1 {
   z-index: 2;
 }
 
-#connect {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-h2 {
-  text-align: center;
+h2,
+h3 {
   text-decoration: underline;
   font-weight: bold;
   color: aqua;
   font-size: 1.5rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 h3 {
-  text-align: center;
-  text-decoration: underline;
-  font-weight: bold;
   color: rgb(111, 31, 223);
   font-size: 1.4rem;
 }
 h4 {
-  text-align: center;
-  font-weight: bold;
   color: #ae1a82;
   font-size: 1.2rem;
   background-color: #95eca3;
 }
 
 h5 {
-  text-align: center;
-  font-weight: bold;
-  /*color:#ae1a82;*/
   color: #4e1aae;
   font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 section {
@@ -112,6 +108,7 @@ section {
   background-color: #48457e;
   border-color: #48457e;
   border-style: solid;
+  justify-content: center;
 }
 
 .social-box:hover {
@@ -119,30 +116,34 @@ section {
   z-index: 2;
 }
 
-nav {
+#Nav {
+  background-color: rgb(139, 103, 141);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+#Nav ul {
   height: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  list-style: none;
   gap: 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background-color: rgb(129, 104, 130);
-  /*border-radius: 10px; */
-  button {
-    width: 6.5rem;
-    height: 1.5rem;
-    font-size: 1.1rem;
-    border-radius: 1rem;
-    /*transition: all 200ms ease-in-out;*/
-    background-color: aqua;
-    color: #a92606;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  }
+  /*background: linear-gradient(to right, teal, pink);*/
 }
-button:hover {
+#Nav button {
+  width: 6.5rem;
+  height: 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  /*transition: all 200ms ease-in-out;*/
+  background-color: aqua;
+  color: #a92606;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#Nav button:hover {
   background: #47f013;
   cursor: pointer;
   transform: translateY(-3px);
@@ -165,9 +166,7 @@ button:hover {
   display: flex;
   background-color: #48457e;
   justify-content: space-between;
-
   padding-top: 0.4rem;
-  background-color: #48457e;
 }
 
 .connectl-img {
@@ -227,7 +226,6 @@ video {
 
 .exp li {
   background-color: #4a7e9c;
-
   border-radius: 0.5rem;
 }
 .exp li p {
@@ -239,6 +237,39 @@ video {
   z-index: 1;
   transition: 0.5s ease-in-out;
 }
+
+/*#skills li {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}*/
+
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style-type: none;
+  padding: 0;
+  justify-content: center;
+}
+
+#skills li {
+  background-color: rgb(192, 192, 192);
+  color: #6d3a15;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
+
+footer {
+  font-family: "Roboto Mono", monospace;
+  color: rgb(255, 0, 251);
+}
+
+/*h1,
+  h4 {
+    background: linear-gradient(to right, pink, teal);
+  }*/
 
 /* Breakpoints:
        
@@ -252,10 +283,9 @@ video {
 /*for iPhone 12 Pro and iPad mini tablet*/
 /* for mobile device 390 px and tablet/ipad device 768px */
 @media screen and (min-width: 390px) and (max-width: 768px) {
-  nav {
+  #Nav ul {
     display: grid;
     grid-template-columns: 0;
-    /*grid-template-columns: repeat(3,1fr);*/
     justify-content: left;
     align-items: center;
     gap: 1.5rem;
@@ -264,11 +294,6 @@ video {
     opacity: 1rem;
   }
 
-  button {
-    width: 0.5rem;
-    height: 1rem;
-    font-size: 0.5rem;
-  }
   h1 {
     font-size: 1.2rem;
   }
@@ -349,7 +374,6 @@ video {
     border-color: #48457e;
     border-style: solid;
   }
-
   .exp {
     display: flex;
     flex-direction: column;
@@ -357,7 +381,6 @@ video {
     width: 100%;
     list-style: none;
   }
-
   .exp-header {
     font-size: 0.4rem;
   }
