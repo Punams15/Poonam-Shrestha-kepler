@@ -1,3 +1,117 @@
+//hamburger menu- on click of link, minimise overlay nav (small screen)
+// Wait for DOM to load
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+  const navbarCollapse = document.getElementById("navbarNav");
+
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      // Only collapse if it's open
+      if (navbarCollapse.classList.contains("show")) {
+        new bootstrap.Collapse(navbarCollapse).toggle();
+      }
+    });
+  });
+});
+
+// ** PROJECTS SECTION **
+
+//1)Creating your fetch
+
+// Fetch your GitHub repositories (can be sorted repositories by name (alphabetically), creation date, update date, stars, etc.)
+//when you use fetch() with just the URL (as shown below), it defaults to a "GET" request.//hint: the fetch function, hint: "GET" is the default method for fetch
+fetch("https://api.github.com/users/Punams15/starred") //I only want starred repos. Not all repos (so used starred instead of repos)
+  .then((response) => response.json()) // <-- THIS is the chain that returns JSON data// automatically parses JSON and returns a Promise// Convert response to JSON //Chain a then method to your fetch call and pass it a function that returns the response JSON data
+  .then((data) => {
+    //2)Handle your JSON data
+    const repositories = data; // Store data in repositories variable //store parsed JSON in a variable//// JSON is already parsed here
+    console.log(repositories); // View your repositories in the console // log repositories
+
+    //Explanation:
+    //The first .then(response => response.json()) parses the raw response.
+
+    //The next .then() receives the parsed JSON data (data).//.then(response => {
+    //const repositories = JSON.parse(this.response); // ❌ This is incorrect here})
+
+    //You store that in repositories and log it to the console.
+
+    //4)Display Repositories in List
+    // Select the projects section and list
+    const projectSection = document.getElementById("projects"); // Step 1: Select the projects section by id //The variable named projectSection that uses DOM selection by id //document.getElementById('projects') is the DOM selection method that selects the element with the id "projects".
+    const projectList = projectSection.querySelector("ul"); // Step 2: Select the list inside the projectSection//The variable named projectList that uses DOM selection on projectSection
+
+    // Clear the list if it already exists (optional)
+    projectList.innerHTML = ""; // Step 5: Set inner text to repository name//example:project.innerText = repositories[i].name;
+
+    //Sort by name (A-Z)
+    repositories.sort((a, b) => a.name.localeCompare(b.name));
+
+    if (repositories.length === 0) {
+      projectList.innerHTML = "<li>No repositories found.</li>"; //if-condition, not a loop. It just checks if the array is empty and handles that case.
+      return;
+    }
+
+    for (let i = 0; i < repositories.length; i++) {
+      // Step 3: Loop through repositories array // loop that iterates over the repositories array.// loop that iterates over your repositories array, starting at index 0:
+      // create list items as usual
+    }
+
+    repositories.forEach((repo) => {
+      const project = document.createElement("li"); //// Step 4: Create a new list item element//Inside the loop,, create a variable named project to make a new list item (li) element,hint: createElement method
+      /*project.innerText = repo.name;*/
+      /* projectList.appendChild(project);*/
+
+      /*// Loop over repositories and create list items
+    for (let i = 0; i < repositories.length; i++) {
+      const project = document.createElement('li');
+      project.innerText = repositories[i].name;
+      projectList.appendChild(project);
+    }
+  })*/
+
+      // Create anchor
+      const link = document.createElement("a");
+      link.href = repo.html_url;
+      link.innerText = repo.name;
+      link.target = "_blank"; // Open in new tab
+      link.rel = "noopener noreferrer"; // Security best practice
+
+      // Append link to li
+      project.appendChild(link); //append the project element to the projectList element,hint: appendChild method
+      projectList.appendChild(project); // Step 6: Append the new list item to the projectList
+    });
+  })
+  //3)Handling errors
+  // Chain a catch() function to your fetch call to handle errors from the server so the user would know what happened if your Projects section was empty.
+  .catch((error) => {
+    console.error("Error fetching repositories:", error);
+    const projectSection = document.getElementById("projects");
+    const projectList = projectSection.querySelector("ul");
+    projectList.innerHTML =
+      "<li>Unable to load projects. Please try again later.</li>";
+  });
+
+//Save and refresh your browser (or just check your browser for changes if using live extension)
+//You should see your list of repositories beneath the "Projects" heading on your portfolio site
+
+//for (let i = 0; i < repositories.length; i++) {
+// Inside this block, you can access each repository like this:
+//const repo = repositories[i];
+
+// Example: Log the name of each repository
+//console.log(repo.name);}
+
+//for (let i = 0; i < repositories.length; i++) {
+//const project = document.createElement('li'); // create list item
+
+//project.innerText = repositories[i].name; // ✅ set inner text using bracket notation
+
+//projectList.appendChild(project); // add it to the list}
+
+//Style your Repository List in your CSS file .STRETCH GOAL: Use flexbox (or grid) to style your list of repositories
+
+//By the end of this assignment, you should have a working API fetch to your GitHub account and be able to see a list of your repository names in the Projects section of your portfolio.  Were there to be a server error during the API fetch, your site would return an error message.  Your project list should be styled using flexbos or grid.
+
 // ** SKILLS SECTION **
 
 //MY SKILLS STORED IN AN ARRAY
@@ -5,11 +119,17 @@ let skills = [
   "JavaScript",
   "HTML",
   "CSS",
+  "Bootstrap ",
   "GitHub",
+  "Responsive Design",
+  "DOM",
+  "Grid",
+  "Flexbox",
+  "Visual Studio Code",
+  "Linux",
   "Adobe Photoshop",
   "Adobe Illustrator",
   "Adobe InDesign",
-  "Linux",
 ];
 
 //VARIABLES CREATED FOR THE SKILLS ELEMENT AND THE UL ELEMENT
@@ -164,8 +284,8 @@ let thisYear = today.getFullYear();
 
 // TO DISPLAY COPYRIGHT UNICODE WITH MY NAME AND CURRENT YEAR IN THE BROWSER AND THE COPYRIGHT P ELEMENT TO THE FOOTER
 const copyright = document.createElement("p");
-copyright.innerHTML = `\u00A9 Poonam Shrestha ${thisYear}`;
-
+//copyright.innerHTML = `\u00A9 Poonam Shrestha ${thisYear}`;
+copyright.innerHTML = `\u00A9  ${thisYear} Poonam Shrestha.All rights reserved.`;
 //FINALLY APPENDING COPYRIGHT
 let findFooter = document.querySelector("footer");
 findFooter.appendChild(copyright);
