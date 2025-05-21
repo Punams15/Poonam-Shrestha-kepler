@@ -51,35 +51,20 @@ fetch("https://api.github.com/users/Punams15/starred") //I only want starred rep
       return;
     }
 
+    // Required: Use a for loop and set innerText properly
     for (let i = 0; i < repositories.length; i++) {
-      // Step 3: Loop through repositories array // loop that iterates over the repositories array.// loop that iterates over your repositories array, starting at index 0:
-      // create list items as usual
-    }
-
-    repositories.forEach((repo) => {
+      //// Step 3: .// loop that iterates over your repositories array, starting at index 0:// create list items as usual
+      const repo = repositories[i];
       const project = document.createElement("li"); //// Step 4: Create a new list item element//Inside the loop,, create a variable named project to make a new list item (li) element,hint: createElement method
-      /*project.innerText = repo.name;*/
-      /* projectList.appendChild(project);*/
-
-      /*// Loop over repositories and create list items
-    for (let i = 0; i < repositories.length; i++) {
-      const project = document.createElement('li');
-      project.innerText = repositories[i].name;
-      projectList.appendChild(project);
-    }
-  })*/
-
-      // Create anchor
-      const link = document.createElement("a");
+      const link = document.createElement("a"); // Create anchor
       link.href = repo.html_url;
       link.innerText = repo.name;
       link.target = "_blank"; // Open in new tab
       link.rel = "noopener noreferrer"; // Security best practice
 
-      // Append link to li
-      project.appendChild(link); //append the project element to the projectList element,hint: appendChild method
-      projectList.appendChild(project); // Step 6: Append the new list item to the projectList
-    });
+      project.appendChild(link);
+      projectList.appendChild(project);
+    }
   })
   //3)Handling errors
   // Chain a catch() function to your fetch call to handle errors from the server so the user would know what happened if your Projects section was empty.
@@ -123,6 +108,7 @@ let skills = [
   "GitHub",
   "Responsive Design",
   "DOM",
+  "REST API",
   "Grid",
   "Flexbox",
   "Visual Studio Code",
